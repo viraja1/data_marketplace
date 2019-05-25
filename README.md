@@ -20,6 +20,9 @@ The Data Marketplace consists of 3 participants:
 * Escrow signs the transaction once it verifies that the buyer has transferred the amount to the multisig address and then shares the data with the buyer.
 * Seller gets the payment.
 
+### MultiSig Transaction Code
+https://github.com/viraja1/data_marketplace/blob/master/app/routes.js 
+
 ## Getting Started
 
 1. Clone Repo
