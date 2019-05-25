@@ -22,9 +22,9 @@ createAccount = function() {
     data["mnemonic"] = algosdk.secretKeyToMnemonic(data.sk);
     return data;
 };
-buyer_account = createAccount()
-seller_account = createAccount()
-escrow_account = createAccount()
+buyer_account = createAccount();
+seller_account = createAccount();
+escrow_account = createAccount();
 console.log("buyer address: " + buyer_account.addr);
 
 
@@ -69,11 +69,11 @@ const simulateMultisigTransaction = async function(data, buyer, seller,
     let rawSignedTxn = algosdk.signMultisigTransaction(txn, params,
       buyer.sk).blob;
 
-    // seller signs the transaction and shares the digital product with escrow
+    // seller signs the multisig transaction and shares the data with the escrow
     let appendedMsigTxn = algosdk.appendSignMultisigTransaction(rawSignedTxn,
       params, seller.sk).blob;
 
-    // buyer sends the amount to multisig account for purchase
+    // buyer sends the amount to the multisig account for purchase
     let payment = {
           "to": multisigAddress,
           "fee": 10,
@@ -83,8 +83,8 @@ const simulateMultisigTransaction = async function(data, buyer, seller,
           "note": algosdk.encodeObj(data),
     };
     var paymentTxn = algosdk.signTransaction(payment, buyer.sk);
-    //submit the transaction
 
+    //submit the payment transaction
     try{
       let ptx = await algoClient.sendRawTransaction(paymentTxn.blob);
     }
@@ -95,9 +95,8 @@ const simulateMultisigTransaction = async function(data, buyer, seller,
 
     await sleep(10000);
 
-    // escrow signs the transaction once it verifies that the buyer has
-    // transferred the amount to the multisig address and then shares the
-    // digital good with the buyer
+    // escrow signs the transaction once it verifies that the buyer has transferred the amount to the multisig address
+    // and then shares the data with the buyer
     let finalMsigTxn = algosdk.appendSignMultisigTransaction(appendedMsigTxn,
       params, escrow.sk).blob;
 
