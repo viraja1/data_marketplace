@@ -57,13 +57,16 @@ The Data Marketplace consists of 3 participants:
     buyer address: LMTVEYXHUGAH5OOX4PM623M75JN6BCQP62SUAVJXUOBRJFFEEDGXP32UDA
     ```
     
-7. Add amount to the buyer account using Algorand faucet
+7. Add amount to the buyer account using Algorand faucet.
+
     Fill the buyer address in the below link and click on "Dispense".
     ```
     https://bank.testnet.algorand.network/
     ```
 
-8.  Wait till the previous transaction is successful. You can verify it from the Algoexplorer using the transaction hash returned by the faucet.  
+8.  Wait till the previous transaction is successful. 
+
+    You can verify it from the Algoexplorer using the transaction hash returned by the faucet.  
     ```
     https://algoexplorer.io/tx/CCZBN7ZEIA7R6KXR6P4K4DYUPI4AFPU4L4COMX4F5RZRDPVBWUZA
     ```
