@@ -24,9 +24,9 @@ createAccount = function() {
     return data;
 };
 
-buyer_account = createAccount();
-seller_account = createAccount();
-escrow_account = createAccount();
+let buyer_account = createAccount();
+let seller_account = createAccount();
+let escrow_account = createAccount();
 console.log("buyer address: " + buyer_account.addr);
 console.log("seller address: " + seller_account.addr);
 console.log("escrow address: " + escrow_account.addr);
@@ -43,8 +43,7 @@ console.log("escrow address: " + escrow_account.addr);
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const simulateMultisigTransaction = async function(data, buyer, seller,
-                                                   escrow){
+const simulateMultisigTransaction = async function(data, buyer, seller, escrow){
     const params = {
         version: 1,
         threshold: 3,
