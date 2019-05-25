@@ -39,57 +39,62 @@ The Data Marketplace consists of 3 participants:
     ```
     npm install
     ```
+    
+4. Update constants
 
-4. Start the server
+   Change the value of firstRound in app/routes.js.
+   The value of firstRound should be the latest block shown in https://algoexplorer.io/
+
+5. Start the server
 
     ```
     npm start
     ```
     
-5. Note down the buyer address in the console
+6. Note down the buyer address in the console
 
     ```
     buyer address: LMTVEYXHUGAH5OOX4PM623M75JN6BCQP62SUAVJXUOBRJFFEEDGXP32UDA
     ```
     
-6. Add amount to the buyer account using Algorand faucet
+7. Add amount to the buyer account using Algorand faucet
     Fill the buyer address in the below link and click on "Dispense".
     ```
     https://bank.testnet.algorand.network/
     ```
 
-7.  Wait till the previous transaction is successful. You can verify it from the Algoexplorer using the transaction hash returned by the faucet.  
+8.  Wait till the previous transaction is successful. You can verify it from the Algoexplorer using the transaction hash returned by the faucet.  
     ```
     https://algoexplorer.io/tx/CCZBN7ZEIA7R6KXR6P4K4DYUPI4AFPU4L4COMX4F5RZRDPVBWUZA
     ```
     
-8. Simulate the multisig transaction described in the `Flow` section using REST API.
+9. Simulate the multisig transaction described in the `Flow` section using REST API.
 
     ```
     curl -XPOST localhost:9000/transact -d '{"data": "climate"}' -H "Content-Type: application/json"
     ```
     
-9. Note down the transaction hash in the console.
+10. Note down the transaction hash in the console.
     ```
     { txId: 'KBRXQ6KPZEZAYRJYY7QF25H6E4Y5L5LG3J5BOMNG7LPSKN47P7EQ' }
     ```
    
-10. Verify multisig transaction details from Algoexplorer using transaction hash
+11. Verify multisig transaction details from Algoexplorer using transaction hash
     ```
     https://algoexplorer.io/tx/KBRXQ6KPZEZAYRJYY7QF25H6E4Y5L5LG3J5BOMNG7LPSKN47P7EQ
     ```
 
-11. View transactions involving buyer using Algoexplorer
+12. View transactions involving buyer using Algoexplorer
     ```
     https://algoexplorer.io/address/LMTVEYXHUGAH5OOX4PM623M75JN6BCQP62SUAVJXUOBRJFFEEDGXP32UDA
     ```
     
-12. View transactions involving multisig account address
+13. View transactions involving multisig account address
     ```
     https://algoexplorer.io/address/LQLYKRFSTGS7KC4DUULOMGW5IT55G3UVXQ4MGQ4ONO6YXKNWCWNMZ43SXE
     ```
      
-13. View transactions involving seller account address
+14. View transactions involving seller account address
     ```
     https://algoexplorer.io/address/AHTTIBSUY3Q44REPTMHREZ53ES2GKKGOR4F4YKXCYOH3DHYJR34WSL2SMY
     ```
