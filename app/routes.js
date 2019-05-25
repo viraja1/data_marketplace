@@ -15,7 +15,8 @@ const config = {
     port : 4181
 };
 const algoClient = new algosdk.Algod(config.token, config.server, config.port);
-
+const firstRound = 1181867;
+const lastRound = 1182867;
 
 createAccount = function() {
     let data = algosdk.generateAccount();
@@ -63,8 +64,8 @@ const simulateMultisigTransaction = async function(data, buyer, seller,
         "to": seller.addr,
         "fee": 10,
         "amount": 100000,
-        "firstRound": 1180512,
-        "lastRound": 1181512,
+        "firstRound": firstRound,
+        "lastRound": lastRound,
         "note": algosdk.encodeObj(data),
     };
 
@@ -79,8 +80,8 @@ const simulateMultisigTransaction = async function(data, buyer, seller,
           "to": multisigAddress,
           "fee": 10,
           "amount": 302000,
-          "firstRound": 1180512,
-          "lastRound": 1181512,
+          "firstRound": firstRound,
+          "lastRound": lastRound,
           "note": algosdk.encodeObj(data),
     };
     let paymentTxn = algosdk.signTransaction(payment, buyer.sk);
