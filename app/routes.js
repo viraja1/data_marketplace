@@ -83,11 +83,11 @@ const simulateMultisigTransaction = async function(data, buyer, seller, escrow){
           "lastRound": lastRound,
           "note": algosdk.encodeObj(data),
     };
-    let paymentTxn = algosdk.signTransaction(payment, buyer.sk);
+    let paymentTxn = algosdk.signTransaction(payment, buyer.sk).blob;
 
     //submit the payment transaction
     try{
-      let ptx = await algoClient.sendRawTransaction(paymentTxn.blob);
+      let ptx = await algoClient.sendRawTransaction(paymentTxn);
     }
     catch(err) {
      console.log("payment transaction error");
