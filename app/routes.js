@@ -60,8 +60,8 @@ const simulateMultisigTransaction = async function(data, buyer, seller,
         "to": seller.addr,
         "fee": 10,
         "amount": 100000,
-        "firstRound": 1180208,
-        "lastRound": 1181208,
+        "firstRound": 1180512,
+        "lastRound": 1181512,
         "note": algosdk.encodeObj(data),
     };
 
@@ -77,9 +77,9 @@ const simulateMultisigTransaction = async function(data, buyer, seller,
     let payment = {
           "to": multisigAddress,
           "fee": 10,
-          "amount": 202000,
-          "firstRound": 1180208,
-          "lastRound": 1181208,
+          "amount": 302000,
+          "firstRound": 1180512,
+          "lastRound": 1181512,
           "note": algosdk.encodeObj(data),
     };
     var paymentTxn = algosdk.signTransaction(payment, buyer.sk);
