@@ -16,7 +16,7 @@ const config = {
 };
 const algoClient = new algosdk.Algod(config.token, config.server, config.port);
 const firstRound = 1181867;
-const lastRound = 1182867;
+const lastRound = firstRound + 1000;
 
 createAccount = function() {
     let data = algosdk.generateAccount();
